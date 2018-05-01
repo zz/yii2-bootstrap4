@@ -127,7 +127,6 @@ class NavBar extends Widget
         if (!isset($this->containerOptions['id'])) {
             $this->containerOptions['id'] = "{$this->options['id']}-collapse";
         }
-        echo $this->renderToggleButton();
         if ($this->brandImage !== false) {
             $this->brandLabel = Html::img($this->brandImage);
         }
@@ -137,6 +136,7 @@ class NavBar extends Widget
         }
         echo $this->headerContent;
         echo Html::endTag('div');
+        echo $this->renderToggleButton();
         Html::addCssClass($this->containerOptions, ['collapse' => 'collapse', 'widget' => 'navbar-toggleable-xs']);
         $options = $this->containerOptions;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
